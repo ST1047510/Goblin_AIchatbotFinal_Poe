@@ -1,0 +1,158 @@
+﻿<Window x:Class="Switch_Grids.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Switch_Grids"
+        mc:Ignorable="d"
+        Title="Home - Grid" Height="450" Width="800">
+    <Grid Background="SeaGreen"> <!--Start of Parent-->
+
+       <!--Grid For Logo-->
+        <Grid  
+            x:Name="logo_grid"
+            Visibility="Visible"
+            >
+            
+            <Image
+                Source="/Goblinlogo.jpg"
+                Height="500"
+                Width="300"
+                HorizontalAlignment="Center"
+                Margin="0,100,0,100"
+               
+            />
+            <!--Start button to switch to username grid-->
+            <Button
+                Content="Start Goblin"
+                FontFamily="Arial"
+                FontSize="16"
+                BorderThickness="3"
+                BorderBrush="Black"
+                Background="YellowGreen"
+                Height="40"
+                Width="200"
+                HorizontalAlignment="Center"
+                Margin="0,300,0,0"
+                x:Name="StartChat"
+                Click="Click_Startbtn"
+             /><!--End of start button-->
+            
+        </Grid>  <!--end of logoGrid-->
+      
+
+        
+        <!--Ask username grid-->
+        <Grid 
+            x:Name="username_grid"
+            Visibility="Hidden"
+            >
+            <TextBlock
+                Text="Welcome to Goblin Ai Chat!"
+                FontSize="20"
+                FontWeight="Bold"
+                FontFamily="Arial"
+                HorizontalAlignment="Center"
+                Margin="0,30,0,0"
+                />
+            <TextBlock
+                Text="Username:"
+                FontSize="20"
+                FontWeight="Bold"
+                FontFamily="Arial"
+                HorizontalAlignment="Center"
+                Margin="0,200,450,20"
+               />
+
+                <!--textbox for user input-->
+            <TextBox
+                x:Name="user_name_input"
+                Height="50"
+                Width="300"
+                FontSize="14"
+                FontWeight="Bold"
+                /><!--end of userinput textbox-->
+                
+                <!--Start of submit button-->
+            <Button
+                Content="Submit"
+                FontFamily="Arial"
+                FontSize="14"
+                BorderThickness="3"
+                BorderBrush="Black"
+                HorizontalAlignment="Center"
+                Height="50"
+                Width="100"
+                Margin="0,150,0,0"
+                x:Name="Submit_btn"
+                Click="Click_Submitbtn"
+                /><!--end of submit button-->
+
+
+        </Grid><!--End of Ask username grid-->
+        
+
+            <!--Start Chats grid-->
+        <Grid 
+              x:Name="Chats_grid"
+            Visibility="Hidden"
+             >
+            
+
+            <!--list view to show chats-->
+            <ListView 
+            Background="Gray"
+            Height="350"
+            Width="400"
+            Margin="150,0,150,70"
+            x:Name="chats"
+            Visibility="Visible"
+            BorderBrush="SeaGreen"
+            BorderThickness="2"
+             />
+            <!--end of list view-->
+
+            <!--the question textbox-->
+            <TextBox
+             Height="50"
+             Width="200"
+             Margin="0,350,200,0"
+             BorderThickness="3"
+             BorderBrush="Black"
+             x:Name="question"
+             />
+            <!--end of textbox-->
+
+            <!--Submit button for the question-->
+            <Button
+             Height="50"
+             Width="200"
+             Margin="220,350,0,0"
+             Content="Submit "
+             Click="submit"
+             FontSize="15"
+             FontWeight="Bold"
+             Background="LightBlue"
+         
+            />
+            <!--end of button-->
+
+            <!--Exit button-->
+            <Button
+                Height="50"
+                 Width="100"
+                Margin="0,350,0,0"
+                HorizontalAlignment="Right"
+                Content="Exit"
+                 Click="exit_method"
+                FontSize="15"
+                FontWeight="Bold"
+                Background="Salmon"
+                />
+
+        </Grid>
+        <!--end of chats grid-->
+
+
+    </Grid><!--End of parent-->
+</Window>
