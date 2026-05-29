@@ -13,7 +13,18 @@
             x:Name="logo_grid"
             Visibility="Visible"
             >
-            
+
+            <TextBlock
+            Text=" GOBLIN AI CHATBOT"
+            FontSize="20"
+            FontWeight="ExtraBold"
+            FontFamily="Arial"
+             HorizontalAlignment="Center"
+             Foreground="YellowGreen"
+             Margin="0,30,0,0"
+             
+            />
+
             <Image
                 Source="/Goblinlogo.jpg"
                 Height="500"
@@ -54,6 +65,7 @@
                 FontFamily="Arial"
                 HorizontalAlignment="Center"
                 Margin="0,30,0,0"
+                Foreground="YellowGreen"
                 />
             
             <Image
@@ -72,6 +84,7 @@
                 FontFamily="Arial"
                 HorizontalAlignment="Center"
                 Margin="0,200,450,20"
+                Foreground="YellowGreen"
                />
 
                 <!--textbox for user input-->

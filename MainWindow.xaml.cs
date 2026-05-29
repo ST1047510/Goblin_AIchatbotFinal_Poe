@@ -231,7 +231,7 @@ namespace Switch_Grids
                     },
                           new Run {
                           Text = questions.Trim(),
-                           Foreground = Brushes.LightSteelBlue,
+                           Foreground = Brushes.Cyan,
                             },
                         }
                     });
