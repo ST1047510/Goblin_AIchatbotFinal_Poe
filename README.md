@@ -58,7 +58,7 @@ The application allows users to interact with a simple AI-style assistant that r
 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+https://github.com/ST1047510/Goblin_AIchatboP2.git
 ```
 
 2. Open the project in Visual Studio
