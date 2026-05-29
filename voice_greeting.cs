@@ -17,7 +17,9 @@ namespace Switch_Grids
 
             //create an instance for the soundPlayer class
             SoundPlayer greetMe = new SoundPlayer(auto_path);
+
             //then greet
+            greetMe.Load();
             greetMe.Play();
 
 
