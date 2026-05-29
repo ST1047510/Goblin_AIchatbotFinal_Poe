@@ -55,6 +55,16 @@
                 HorizontalAlignment="Center"
                 Margin="0,30,0,0"
                 />
+            
+            <Image
+             Source="/Goblinlogo.jpg"
+             Height="350"
+            Width="170"
+             VerticalAlignment="Top"
+            Margin="0,60,0,0"
+       
+            />
+
             <TextBlock
                 Text="Username:"
                 FontSize="20"
