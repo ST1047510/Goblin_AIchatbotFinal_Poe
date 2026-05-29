@@ -102,6 +102,7 @@
                 FontFamily="Arial"
                 FontSize="14"
                 BorderThickness="3"
+                Background="YellowGreen"
                 BorderBrush="Black"
                 HorizontalAlignment="Center"
                 Height="50"
