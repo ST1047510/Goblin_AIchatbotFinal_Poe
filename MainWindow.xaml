@@ -94,6 +94,7 @@
                 Width="300"
                 FontSize="14"
                 FontWeight="Bold"
+                TextAlignment="Center"
                 /><!--end of userinput textbox-->
                 
                 <!--Start of submit button-->
@@ -174,8 +175,173 @@
                 Background="Salmon"
                 />
 
+            <!--start of add task button-->
+            <Button
+                Height="50"
+                Width="100"
+                Margin="0,350,0,0"
+                HorizontalAlignment="Left"
+                Content="Add a task"
+                Click="Add_task"
+                />
+
         </Grid>
         <!--end of chats grid-->
+        
+        
+
+        <!--task adding and viewing grid-->
+        <Grid 
+     x:Name="task_grid"
+     Visibility="Hidden"
+     >
+            <!--start of tasks_grid-->
+
+            <ListView
+         Height="300"
+         Width="700"
+         Margin="0,0,0,110"
+         x:Name="tasks"
+         Background="Gray"
+         />
+
+            <TextBox
+         Height="50"
+         Width="250"
+         Margin="0,300,350,0"
+         x:Name="question_box"
+         />
+
+            <Button
+         Height="40"
+         Width="250"
+         Margin="250,300,0,0"
+         Content="Submit Task"
+         Click="Submit_task"
+         />
+
+            <!--Button to view task-->
+            <Button
+         Height="40"
+         Width="100"
+         Content="view task" 
+        Margin="650,300,0,0"  
+        Click="view_alltasks"
+         />
+
+            <Button
+            Height="40"
+            Width="60"
+            Margin="0,300,0,0"
+            HorizontalAlignment="Left"
+            Content="🡄" 
+            Click="Main_chat"
+                />
+
+        </Grid>
+        <!--end of task and viewing-->
+
+        
+        
+        
+        <!--task adding and viewing grid-->
+        <Grid
+                Visibility="Hidden"
+                x:Name="viewtasks_grid"
+                >
+            <!--start of task adding -->
+
+
+
+
+            <ListView
+                  x:Name="view_taskgrid"
+                  Height="350" 
+                  Width="750" 
+                
+                  Margin="0,0,0,70"
+                
+                MouseDoubleClick="Manage_task"
+                 
+                /> 
+
+
+            <Button
+                Height="40"
+                Width="250"
+                Margin="0,350,0,0"
+                Content="Back to chats"
+                Click="Back_to_chats"
+                />
+
+            <!--buttton to submit user input-->
+            <Button
+            Height="40"
+            Width="100"
+            Margin="0,350,0,0"
+            Content="train the Ai"
+            Click="train_ai"
+            HorizontalAlignment="Right"
+            BorderThickness="3"   
+            />  
+
+        </Grid>
+        <!--end of task adding and viewing grid-->
+
+
+        
+        
+        <!---Grid for checking if ai is getting trained-->
+
+        <Grid
+    x:Name="chats_grid"
+    Visibility="Hidden"
+    >
+            <!--start of ai grid-->
+
+
+            <!--textbox to take user input-->
+            <TextBox
+            x:Name="emotions"
+            Height="50"
+            Width="300"
+            Margin="0,0,0,200"
+            />
+
+            <!--buttton to submit user input-->
+            <Button
+            Height="40"
+            Width="350"
+            Margin="0,0,0,0"
+            Content="train Ai"
+            Click="training_ai"
+            />
+
+            <!--ttextblock to show how the user is training the ai-->
+            <TextBlock
+            Height="100"
+            Width="300"
+            Margin="0,300,0,0"
+            x:Name="show_emotions_detected"
+            Text="waiting for the results"
+            Background="WhiteSmoke"    
+            />
+
+
+            <Button
+            Height="40"
+            Width="150"
+            Margin="0,350,0,0"
+            Content="Back to viewtask"
+            Click="viewtasks_Click"
+            HorizontalAlignment="Left"    
+            />  
+
+        </Grid>
+        <!--end of chatsgrid-->
+
+
+
 
 
     </Grid><!--End of parent-->
