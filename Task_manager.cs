@@ -134,7 +134,7 @@ namespace Switch_Grids
 
                 //add the items to the list view
 
-                view_taskgrid.Items.Add(task_id + " " + task_name + " with " + task_description + " and with status " + task_status + "  is due on " + task_due_date );
+                view_taskgrid.Items.Add(task_id + " " + task_name + " with  descriotion of " + task_description + " and with status " + task_status + "  is due on " + task_due_date );
 
 
             }

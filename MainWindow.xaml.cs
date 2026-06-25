@@ -425,7 +425,7 @@ namespace Switch_Grids
                     },
                     new Run
                 {
-                    Text = " Welcome to the Mini Quiz(type 'start quiz' to play) and the Task Manger Assistant",
+                    Text = " Welcome to the Mini Quiz ( type 'start quiz' to play ) and the Task Manger Assistant",
                     Foreground =Brushes.DarkGreen,
                 },
 
@@ -454,6 +454,7 @@ namespace Switch_Grids
 
 
 
+
         //method to get decsiption from Ai
         private string getAiresponse(string task_name) 
         {
@@ -471,6 +472,8 @@ namespace Switch_Grids
 
 
 
+
+
         //method to start the quiz
         private void StartQuiz()
         {
@@ -478,10 +481,28 @@ namespace Switch_Grids
             Score = 0;
             quizStarted = true;
 
-            tasks.Items.Add("Quiz Started!");
-            tasks.Items.Add(questions[currentQuestion]);
+            tasks.Items.Add(new TextBlock
+            {
+                Inlines ={
+                    new Run{
+                    Text="=== Quiz Started ===",
+                    Foreground =Brushes.Blue,
+                    }
+                }
+            });
+            tasks.Items.Add(new TextBlock
+            {
+                Inlines ={
+                    new Run{
+                    Text=questions[currentQuestion],
+                    Foreground =Brushes.Cyan,
+                    }
+                }
+            });
 
         }//end of start quiz method
+
+
 
 
 
@@ -492,26 +513,67 @@ namespace Switch_Grids
             if (userAnswer.ToUpper() == answers[currentQuestion])
             {
                 Score++;
-                tasks.Items.Add("Correct!");
+                tasks.Items.Add(new TextBlock
+                {
+                    Inlines ={
+                    new Run{
+                    Text="Correct!!",
+                    Foreground =Brushes.Green,
+                    }
+                }
+                });
             }
             else
             {
-                tasks.Items.Add("Incorrect!");
-                tasks.Items.Add("Correct answer: " + answers[currentQuestion]);
+                tasks.Items.Add(new TextBlock
+                {
+                    Inlines ={
+                    new Run{
+                    Text="Incorrect!!",
+                    Foreground =Brushes.Red,
+                    }
+                }
+                });
+                tasks.Items.Add(new TextBlock
+                {
+                    Inlines ={
+                    new Run{
+                    Text="Correct answer " + answers[currentQuestion],
+                    Foreground =Brushes.Green,
+                    },
+                },
+                });
             }
 
             currentQuestion++;
 
             if (currentQuestion < questions.Length)
             {
-                tasks.Items.Add(questions[currentQuestion]);
+                tasks.Items.Add(new TextBlock
+                {  
+                    Inlines = {
+                    new Run {
+                    Text =questions[currentQuestion],
+                    Foreground =Brushes.Cyan,
+                    },
+                    },
+                });
             }
             else
             {
-                tasks.Items.Add($"Quiz Completed! Score: {Score}/{questions.Length}");
+                tasks.Items.Add(new TextBlock {
+
+                    Inlines = {
+                    new Run {
+                   Text= $"Quiz Completed! Score: {Score}/{questions.Length}", 
+                   Foreground =Brushes.YellowGreen,
+                    },
+                },
+               });
                 quizStarted = false;
             }
         }//method to check answers for quiz
+
 
 
 
@@ -589,7 +651,7 @@ namespace Switch_Grids
                     },
                     new Run
                 {
-                    Text = $"Great, I will remind you in" + days + " days to do the task on " + format_date ,
+                    Text = $"Great, I will remind you in " + days + " days to do the task on " + format_date ,
                     Foreground =Brushes.Green,
                 },
 
@@ -639,7 +701,7 @@ namespace Switch_Grids
                 return;
             }
 
-            tasks.ScrollIntoView(question_box);
+            tasks.ScrollIntoView(chats);
             question_box.Clear();
         }// end of submit_task button
 
@@ -654,7 +716,7 @@ namespace Switch_Grids
             viewtasks_grid.Visibility = Visibility.Visible;
             task_grid.Visibility = Visibility.Hidden;
 
-            tasks.ScrollIntoView(task_grid);
+            view_taskgrid.ScrollIntoView(viewtasks_grid);
 
            autoload_task();
 
@@ -683,8 +745,10 @@ namespace Switch_Grids
             viewtasks_grid.Visibility = Visibility.Hidden;
             chats_grid.Visibility = Visibility.Visible;
         
-        
+            emotions.Clear();
         }//end of viewgrids to train ai button
+
+
 
 
 
@@ -695,7 +759,7 @@ namespace Switch_Grids
             chats_grid.Visibility=Visibility.Hidden;
             viewtasks_grid.Visibility= Visibility.Visible;
 
-            view_taskgrid.ScrollIntoView(viewtasks_grid);
+            //viewtasks_grid.ScrollIntoView(viewtasks_grid);
         
         }//start of button to return to view tasks
 
@@ -711,6 +775,8 @@ namespace Switch_Grids
             manage_tasks.Load_task(view_taskgrid);
 
         }//end of autoload
+
+
 
 
 
@@ -745,6 +811,7 @@ namespace Switch_Grids
 
 
 
+
         //methid to auto train the ai model when the project runs
         private void trainData()
         {
@@ -762,6 +829,8 @@ namespace Switch_Grids
 
              };//end of trainig data
         }//end of train data
+
+
 
 
 
@@ -805,7 +874,7 @@ namespace Switch_Grids
             trainingData.Add(new SentimentData { Text = input, Label = prediction.Prediction });
             TrainModel();
 
-
+            
         }//end of event handler
 
 

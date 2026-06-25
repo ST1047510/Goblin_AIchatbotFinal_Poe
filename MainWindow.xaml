@@ -117,6 +117,8 @@
         </Grid><!--End of Ask username grid-->
         
 
+        
+        
             <!--Start Chats grid-->
         <Grid 
               x:Name="Chats_grid"
@@ -190,6 +192,7 @@
         
         
 
+        
         <!--task adding and viewing grid-->
         <Grid 
      x:Name="task_grid"
